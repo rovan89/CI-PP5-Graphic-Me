@@ -1,0 +1,16 @@
+
+body {
+    background: red;
+}
+
+header {
+    background-color: #212426;
+}
+
+.navbar {
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    color: #ffffff;
+}
