@@ -30,21 +30,32 @@
     {% endblock %}
 
     <title>Graphic Me {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <header class="container-fluid fixed-top"></header>
+    </head>
+    <body>
+        <header class="container-fluid fixed-top">
+            <div class="row">
+                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <a href="{% url 'home' %}" class="nav-link site-logo">
+                        <h2 class="logo-font text-white my-0"><strong>Graphic Me</strong></h2>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0"></div>
+                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0"></div>
+                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0"></div>
+            </div>
+        </header>
 
-    {% if messages %}
-      <div class="message-container"></div>
-    {% endif %}
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+        {% block page_header %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
-  </body>
+        {% block postloadjs %}
+        {% endblock %}
+    </body>
 </html>
