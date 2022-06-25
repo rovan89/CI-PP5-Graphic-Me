@@ -15,7 +15,8 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
@@ -34,14 +35,13 @@
     </head>
     <body>
         <header class="container-fluid fixed-top">
-            <div class="row">
-                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="row header-row">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link site-logo">
                         <h2 class="logo-font text-white my-0"><strong>Graphic Me</strong></h2>
                     </a>
                 </div>
-                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0"></div>
-                <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-80">
                             <input class="form-control border border-black" type="text" name="q" placeholder="Search">
@@ -55,7 +55,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-lg-3 my-auto text-center py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto text-center py-1 py-lg-0">
                     <ul class="list-inline-item list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,6 +93,34 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse " id="navbarNav">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </header>
