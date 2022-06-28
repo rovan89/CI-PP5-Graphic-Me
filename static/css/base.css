@@ -1,3 +1,33 @@
+
+/* Navigation */
+
 header {
     background-color: #212426;
 }
+
+#navbarNav {
+    justify-content: center;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.index_hero_image {
+    padding-top: 200px ; 
+}
+
+/* Site Buttons */
+
+.site_btn_blu {
+    color: #FFFFFF;
+    background-color: #1185C0;
+    padding: 12px 28px;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+}
+
+.site_btn_blu:hover {
+    background-color: #FFFFFF;
+    color: #1185C0;
+  }
