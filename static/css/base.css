@@ -1,4 +1,8 @@
 
+html {
+    height: 100%;
+}
+
 /* Navigation */
 
 header {
@@ -9,8 +13,13 @@ header {
     justify-content: center;
 }
 
-body {
-    background-color: aquamarine;
+
+#search_input_field {
+    width: 100%;
+}
+
+#search_icon {
+    color: #FFFFFF;
 }
 
 .index_hero_image {
@@ -30,4 +39,80 @@ body {
 .site_btn_blu:hover {
     background-color: #FFFFFF;
     color: #1185C0;
+    
   }
+
+  /* Design Cards */
+
+.design_cards {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin: 10px;
+  }
+
+.portfolio_cards {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+.home_page_porfolio_cards_text {
+    color: #FFFFFF;
+    background-color: #1185C0;
+  }
+
+/* Testimonials Section */
+
+.testimonial_container {
+    color: #FFFFFF;
+    background-color: #212426;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.testimonial_image {
+    height: 100px;
+    width: 100px;
+    border: 5px solid #1185C0;
+    border-radius: 50%;
+}
+
+.carousel-indicators {
+    bottom: -70px;
+}
+
+.carousel-indicators li {
+    background-color: #212426;
+}
+
+.carousel-indicators li .active {
+    background-color: #1185C0;
+}
+
+
+/* Media Queries */
+
+  @media screen and (max-width: 800px) {
+
+    /* Navigation */
+
+    #search_input_field {
+      display: none;
+    }
+
+    #search_input_field {
+        width: 10%;
+    }
+
+    .index_hero_image {
+        padding-top: 400px ; 
+    }
+
+    /* Site Buttons */
+
+    .site_btn_blu {
+        width: 300px;
+        height: 40px;
+    }
+
+
+}
