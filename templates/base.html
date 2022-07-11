@@ -41,14 +41,14 @@
                         <h2 class="logo-font text-white my-0"><strong>Graphic Me</strong></h2>
                     </a>
                 </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-flex justify-content-center">
                     <form method="GET" action="">
-                        <div class="input-group w-80">
-                            <input class="form-control border border-black" type="text" name="q" placeholder="Search">
+                        <div class="input-group" id="search_input_field">
+                            <input class="form-control border border-black d-none d-lg-block" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                     <span class="icon">
-                                        <i class="fas fa-search search-icon"></i>
+                                        <i class="fas fa-search search-icon" id="search_icon"></i>
                                     </span>
                                 </button>
                             </div>
@@ -134,7 +134,24 @@
 
         {% block content %}
         {% endblock %}
-
+        <div class="container bg-info w100">
+            <div class="row">
+                <div class="col-4 bg-success">
+                    <h4 class="col-12 p-2"> Services </h4>
+                    <div class="col-12">
+                        <i class="fab fa-facebook m-2"></i>
+                        <i class="fab fa-twitter m-2"></i>
+                        <i class="fab fa-instagram m-2"></i>
+                    </div>
+                </div>
+                <div class="col-4 bg-warning ">
+                    <h4 class="p-2"> Categories </h4>
+                </div>
+                <div class="col-4 bg-primary">
+                    <h4 class="p-2"> Sign up for our news letter</h4>
+                </div>
+            </div>
+        </div>
         {% block postloadjs %}
         {% endblock %}
     </body>
