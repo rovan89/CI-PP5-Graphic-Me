@@ -13,7 +13,6 @@ header {
     justify-content: center;
 }
 
-
 #search_input_field {
     width: 100%;
 }
@@ -85,6 +84,17 @@ header {
 }
 
 .carousel-indicators li .active {
+    background-color: #1185C0;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #212426;
+}
+
+.news_ltr_btn {
     background-color: #1185C0;
 }
 
