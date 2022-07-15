@@ -21,3 +21,4 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     number_of_concepts = models.IntegerField(default=1)
     number_of_designs = models.IntegerField(default=1)
+    created_on = models.DateTimeField(auto_now_add=True)
