@@ -5,10 +5,29 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container portfolio_top_container">
-        <div class="row">
-            <div class="col">
-                <h1>Test</h1>
+    <div class="portfolio_main_container col-md-offset-*">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h2>Portfolio</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="protfolio_img_container text-center">
+                            {% if product.image %}
+                                <a href="">
+                                    <img class="p-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL}}noimage.url.png" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
