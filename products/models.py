@@ -2,6 +2,10 @@ from django.db import models
 
 
 class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Categories"
+        
     name = models.CharField(max_length=250, blank=True)
     friendly_name = models.CharField(max_length=250, null=False, blank=True)
 
@@ -17,7 +21,6 @@ class Product(models.Model):
     description = models.TextField()
     size = models.BooleanField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image_url = models.URLField(max_length=1500, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     number_of_concepts = models.IntegerField(default=1)
     number_of_designs = models.IntegerField(default=1)
