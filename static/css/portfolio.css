@@ -1,0 +1,26 @@
+.portfolio_main_container {
+    padding-top: 200px ;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Main Image container - Grid View */
+.protfolio_img_container {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+
+/* Main Image container - Grid View */
+    .protfolio_img_container {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+    }
+
+
+}
