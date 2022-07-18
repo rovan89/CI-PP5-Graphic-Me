@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="portfolio_main_container col-md-offset-*">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h2>{{ product.name }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 m-5">
+                    <div class="protfolio_detail_img_container text-center">
+                        {% if product.image %}
+                            <a href="{{ product.image.url }}" target="_blank">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="">
+                                <img src="{{ MEDIA_URL}}noimage.url.png" alt="{{ product.name }}">
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-5">
+                    <div class="portfolio_details_container">
+                        <p>{{ product.name }}</p>
+                        <p>{{ product.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}
