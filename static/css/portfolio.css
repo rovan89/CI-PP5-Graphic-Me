@@ -16,9 +16,25 @@
     opacity: .7;
 }
 
+/* Portfolio Detail Page */
+/* Portfolio Image container - Grid View */
+/* Main Image container - Grid View */
+.protfolio_detail_img_container img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+
+}
 /* Media Queries */
 
 @media screen and (max-width: 800px) {
 
+/* Portfolio Image container - Grid View */
+/* Main Image container - Grid View */
+.protfolio_detail_img_container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 
+}
 }
