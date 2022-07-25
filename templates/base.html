@@ -113,8 +113,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">About</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Portfolio</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="{% url 'portfolio' %}" id="portfolio-link" data-toggle="dropdown" aria-labelledby="user-options">Portfolio</a>
+                                    <div class="dropdown-menu" aria-labelledby="portfolio-link">
+                                        <a href="{% url 'portfolio' %}" class="dropdown-item">All Categories</a>
+                                        <a href="{% url 'portfolio' %}?q=branding" class="dropdown-item">Branding</a>
+                                        <a href="{% url 'portfolio' %}?q=logo" class="dropdown-item">Logos</a>
+                                        <a href="{% url 'portfolio' %}?q=poster" class="dropdown-item">Posters</a>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Contact</a>
@@ -152,6 +158,11 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Portfolio</a>
+                                <div class="dropdown-menu" aria-labelledby="portfolio-link">
+                                    <div href="{% url 'portfolio' %}?category=brand" class="dropdown-item">Branding</div>
+                                    <div href="{% url 'portfolio' %}?category=logo" class="dropdown-item">Logos</div>
+                                    <div href="{% url 'portfolio' %}?category=poster" class="dropdown-item">Posters</div>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>
