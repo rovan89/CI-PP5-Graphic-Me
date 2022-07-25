@@ -26,10 +26,17 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-5">
+                <div class="col-12 col-md-6 col-lg-4 mt-5 ml-5">
                     <div class="portfolio_details_container">
                         <p>{{ product.name }}</p>
                         <p>{{ product.description }}</p>
+                        {% if product.category %}
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'portfolio' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
