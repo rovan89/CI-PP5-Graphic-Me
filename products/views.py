@@ -5,7 +5,7 @@ from .models import Product, Category
 
 # Create your views here.
 
-def portfolio(request):
+def all_products(request):
     """ This view returns the portfolio page, including sorting and search queries"""
 
     products = Product.objects.all()
