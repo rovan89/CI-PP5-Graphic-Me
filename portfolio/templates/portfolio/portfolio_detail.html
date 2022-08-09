@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="portfolio_main_container col-md-offset-*">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h2>{{ portfolio_item.name }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 m-5">
+                    <div class="protfolio_detail_img_container text-center">
+                        {% if portfolio_item.image %}
+                            <a href="{{ portfolio_item.image.url }}" target="_blank">
+                                <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.name }}">
+                            </a>
+                        {% else %}
+                            <a href="">
+                                <img src="{{ MEDIA_URL}}noimage.url.png" alt="{{ portfolio_item.name }}">
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-5 ml-5">
+                    <div class="portfolio_details_container">
+                        <p>{{ portfolio_item.name }}</p>
+                        <p>{{ portfolio_item.description }}</p>
+                        {% if portfolio_item.category %}
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'portfolio' %}?category={{ portfolio_item.category.name }}">
+                                <i class="fas fa-tag mr-1"></i></i>{{ portfolio_item.category.friendly_name }}
+                            </a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}
