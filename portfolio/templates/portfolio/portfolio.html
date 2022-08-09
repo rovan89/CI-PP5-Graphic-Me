@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="portfolio_main_container col-md-offset-*">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h2>Portfolio</h2>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted text-center text-md-left">
+                    {{ portfolio_items|length }} Portfolio Items {% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+            <div class="row">
+                {% for product in portfolio_items %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="protfolio_img_container text-center">
+                            {% if product.image %}
+                                <a href="{% url 'portfolio_detail' product.id %}">
+                                    <img class="p-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'portfolio_detail' product.id %}">
+                                    <img src="{{ MEDIA_URL}}noimage.url.png" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}
