@@ -3,6 +3,7 @@ html {
     height: 100%;
 }
 
+
 /* Navigation */
 
 header {
@@ -23,6 +24,19 @@ header {
 
 .index_hero_image {
     padding-top: 200px ; 
+}
+
+/* Site body container */
+
+#content_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#inner_content_container {
+    flex: 1 0 auto;
+    min-height: 100vh;
 }
 
 /* Site Buttons */
@@ -89,6 +103,7 @@ header {
 
 /* Footer */
 footer {
+    flex-shrink: 0;
     width: 100%;
     color: #FFFFFF;
     background-color: #212426;
