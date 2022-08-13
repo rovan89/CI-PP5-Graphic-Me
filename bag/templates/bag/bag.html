@@ -53,7 +53,8 @@
                             {% endfor %}
                         </table>
                         <br>
-                        <strong>Grand Total:</strong><p>${{ grand_total|floatformat:2 }}</p>
+                        <strong>Grand Total: </strong><p>${{ grand_total|floatformat:2 }}</p>
+                        <strong>You Saved: </strong><p>${{ discount|floatformat:2 }}</p>
                     </div>
                 {% else %}
                     <p>Your bag is empty</p>
