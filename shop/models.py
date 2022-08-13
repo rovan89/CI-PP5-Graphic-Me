@@ -3,20 +3,29 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 from products.models import Category, Product
 
+CONCEPT_CHOICES = [
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+]
 
 class Order(models.Model):
     """ This is a model of a customers order """
 
+    id = models.BigAutoField(primary_key=True)
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     created_on = models.DateTimeField(auto_now_add=True)
     description = models.TextField(null=True, blank=True,)
     image = models.ImageField(null=True, blank=True)
-    number_of_concepts = models.IntegerField(default=1)
+    number_of_concepts = models.IntegerField(choices=CONCEPT_CHOICES )
     price = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
 
