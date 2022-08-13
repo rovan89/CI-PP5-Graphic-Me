@@ -13,7 +13,48 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive"></div>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Number of Concepts</th>
+                                    <th scope="col">Item Price</th>
+                                    <th scope="col">Concpet Price</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            {% for item in bag_items %}
+                            <tr>
+                                <td class="py-1">
+                                    <p class="my-0">{{ item.category_name }}</p>
+                                </td>                                
+                                <td class="py-1">
+                                    <p class="my-0">{{ item.bag.description }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">{{ item.bag.number_of_concepts }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">${{ item.concept_price }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">${{ item.category_price }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">{{ item.bag.image }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">${{ item.total }}</p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <br>
+                        <strong>Grand Total:</strong><p>${{ grand_total|floatformat:2 }}</p>
+                    </div>
                 {% else %}
                     <p>Your bag is empty</p>
                     <a href="{% url 'shop' %}" class="site_btn_blu">Order Now</a>
