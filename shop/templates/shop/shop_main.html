@@ -21,7 +21,6 @@
     <!-- Shop Form -->
     <form class="form"  action="{% url 'add_to_bag'  %}" method="POST" enctype="multipart/form/data" name="user_form">
         {% csrf_token %}
-        {{ order_number }}
         {{ form }}
         <input type="submit" class="site_btn_blu mt-5" >
 <!--
