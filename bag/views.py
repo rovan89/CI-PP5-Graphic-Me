@@ -18,5 +18,5 @@ def add_to_bag(request):
     user_order = dict(request.POST.items())
     bag = user_order
     request.session['bag'] = bag
-    print(request.session['bag']
+
     return redirect(redirect_url)
