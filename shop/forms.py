@@ -9,6 +9,7 @@ class OrderForm(ModelForm):
         model = Order
 
         fields = (
+            'id',
             'category',
             'description',
             'number_of_concepts',
