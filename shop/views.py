@@ -6,7 +6,7 @@ def shop_form(request):
     """ This view returns the shop page with form for customers to detail what they want"""
     
     form = OrderForm()
-
+    
     context = {
         'form': form
     }
