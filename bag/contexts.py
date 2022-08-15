@@ -33,6 +33,7 @@ def bag_contents(request):
 
     if total > settings.DISCOUNT_THRESHOLD:
         discount = total * Decimal(settings.DISCOUNT_PERCENTAGE / 100)
+        grand_total = total - discount
     else:
         total = 0
 
@@ -45,8 +46,6 @@ def bag_contents(request):
         
     })
 
-    grand_total = total - discount
-    print('GRAND TOTAL: ', discount)
 
     context = {
         'bag_items': bag_items,
