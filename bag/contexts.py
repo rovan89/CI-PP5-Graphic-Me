@@ -12,6 +12,7 @@ def bag_contents(request):
 
     bag_items = []
     total = 0
+    discount = 0
     category_price = 0
     category_name = None
     concept_price = 100
