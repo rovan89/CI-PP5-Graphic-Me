@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from products.models import Category
+from shop.models import Order
 
 def bag_contents(request):
 
@@ -11,47 +12,75 @@ def bag_contents(request):
      """
 
     bag_items = []
+    ordered_items = []
     total = 0
+    cart_total = 0
     discount = 0
+    product_count = 0
     grand_total = 0
     category_price = 0
     category_name = None
-    concept_price = 100
+    cat_id = 0
+    concept_price = 0
     bag = request.session.get('bag', {})
     
-    for item in bag.items():
-        category_item = Category.objects.all().values()
-        if 'category' in item:
-            item = int(item[1])
-            for i in category_item:
-                if(item == i['id']):
-                    print('Success: ', item, '==', i)
-                    category_price = i['price']
-                    category_name = i['name']
-                    concept_bag = int(bag['number_of_concepts'])
-                    concept_price = concept_price * concept_bag
+    print(bag)
+    order_item = Order.objects.all().values()
+    category = Category.objects.all().values()
+    current_user = request.user.id
+    order_user_id = None
 
-    total = concept_price + category_price
-
-    if total > settings.DISCOUNT_THRESHOLD:
-        discount = total * Decimal(settings.DISCOUNT_PERCENTAGE / 100)
-        grand_total = total - discount
-    else:
-        total = 0
-
-    bag_items.append({
-        'bag': bag,
-        'concept_price': concept_price,
-        'category_price': category_price,
-        'category_name': category_name,
-        'total': total,
         
-    })
+    for ordered_item in order_item:
+        order_user_id = ordered_item.get('user_id')
 
+        ordered_category_id = ordered_item.get('category_id')
+        for i in category:
+            cat_id = i.get('id')
+            cat_name = i.get('friendly_name')
+            if cat_id == ordered_category_id:
+                category_name = cat_name
+                category_price = i.get('price')
+                
+        if current_user == order_user_id:
+            concept_bag = int(ordered_item.get('number_of_concepts'))
+            concept_price = 100 * concept_bag
+
+            total = concept_price + category_price
+            
+            ordered_items.append({
+                'ordered_item': ordered_item,
+                'concept_price': concept_price,
+                'category_price': category_price,
+                'category_name': category_name,
+                'total': total,
+            }) 
+
+            bag_items.append({
+                'ordered_item': ordered_item,
+                'concept_price': concept_price,
+                'category_price': category_price,
+                'category_name': category_name,
+                'total': total,
+            })
+
+    for i in bag_items:
+        sub_total = i.get('total')
+        if current_user == order_user_id:
+            cart_total = cart_total + sub_total
+
+    if cart_total > settings.DISCOUNT_THRESHOLD:
+        discount = cart_total * Decimal(settings.DISCOUNT_PERCENTAGE / 100)
+        grand_total = cart_total - discount
+    else:
+        grand_total = cart_total
 
     context = {
         'bag_items': bag_items,
-        'total': total,
+        'ordered_items': ordered_items,
+        'category_price': category_price,
+        'total': cart_total,
+        'product_count': product_count,
         'discount': discount,
         'grand_total': grand_total,
 
