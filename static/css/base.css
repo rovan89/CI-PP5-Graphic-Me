@@ -1,6 +1,8 @@
 
-html {
-    height: 100%;
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -101,10 +103,17 @@ header {
     background-color: #1185C0;
 }
 
+/* Allauth */
+
+.allauth-container {
+    margin-top: 200px;
+}
+
 /* Footer */
 footer {
     flex-shrink: 0;
     width: 100%;
+    margin-top: auto;
     color: #FFFFFF;
     background-color: #212426;
 }
