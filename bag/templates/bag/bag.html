@@ -30,25 +30,25 @@
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-                            {% for item in bag_items %}
+                            {% for item in ordered_items %}
                             <tr>
                                 <td class="py-1">
                                     <p class="my-0">{{ item.category_name }}</p>
                                 </td>                                
                                 <td class="py-1">
-                                    <p class="my-0">{{ item.bag.description }}</p>
+                                    <p class="my-0">{{ item.ordered_item.description }}</p>
                                 </td>
                                 <td class="py-1">
-                                    <p class="my-0">{{ item.bag.number_of_concepts }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">${{ item.concept_price }}</p>
+                                    <p class="my-0">{{ item.ordered_item.number_of_concepts }}</p>
                                 </td>
                                 <td class="py-1">
                                     <p class="my-0">${{ item.category_price }}</p>
                                 </td>
                                 <td class="py-1">
-                                    <p class="my-0">{{ item.bag.image }}</p>
+                                    <p class="my-0">${{ item.concept_price }}</p>
+                                </td>
+                                <td class="py-1">
+                                    <p class="my-0">{{ item.ordered_item.image }}</p>
                                 </td>
                                 <td class="py-1">
                                     <p class="my-0">${{ item.total }}</p>
