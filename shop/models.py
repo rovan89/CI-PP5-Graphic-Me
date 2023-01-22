@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 from products.models import Category, Product
+from profiles.models import UserProfile
 
 CONCEPT_CHOICES = [
     (1, '1'),
@@ -21,6 +22,8 @@ class Order(models.Model):
     id = models.BigAutoField(primary_key=True)
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_order")
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                        null=True, blank=True, related_name="orders")
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     created_on = models.DateTimeField(auto_now_add=True)
     description = models.TextField(null=True, blank=True,)
@@ -34,6 +37,13 @@ class Order(models.Model):
         """ Generate a random, unique order number using UUID """
 
         return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery cost
+        """
+        self.grand_total 
 
     def save(self, *args, **kwargs):
         """" Override original save method and set order number """
@@ -69,6 +79,6 @@ class OrderDesignItem(models.Model):
         self.design_order_total = self.category.price
         super().save(*args, **kwargs) 
 
-    # def __str__(self):
-    #   return f'ID {self.product.id} on order {self.order.order_number}'
+    def __str__(self):
+       return f'ID {self.product.id} on order {self.order.order_number}'
 
