@@ -1,8 +1,13 @@
 import uuid
+import stripe
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
+from django.conf import settings
 from products.models import Product
 from shop.models import Order
+from shop.forms import OrderForm
+from bag.contexts import bag_contents
 
 @login_required
 def view_bag(request):
@@ -47,6 +52,27 @@ def remove_from_bag(request, ordered_item):
         return HttpResponse(status=500)
 
 
+@login_required
+def edit_item(request, item_id):
+    order = get_object_or_404(Order, id=item_id)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, instance=order)
+        if form.is_valid():
+            form.save()
+            return redirect('view_bag')
+    form = OrderForm(instance=order)
+
+   
+    print("|| bag/views.py || EDIT ITEM: ", request)
+    print("|| bag/views.py || EDIT ITEM: ", request)
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'bag/edit_item.html', context)
+
+
     # bag = request.session.get('bag', {})
     # user_order = dict(request.POST.items())
     # print("|| bag/views.py || BAG: ", bag)
@@ -56,3 +82,38 @@ def remove_from_bag(request, ordered_item):
     print("|| bag/views.py || _______________________________________________")
 
     return redirect(reverse('view_bag'))
+
+def chekout(request):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    order_number = request.POST.get('order_number')
+    category = request.POST.get('category')
+    price = request.POST.get('grand_total')
+
+    current_bag = bag_contents(request)
+    total = current_bag['grand_total']
+    print("|| bag/views.py || TOTAL: ", total, type(total))
+
+
+    stripe_total = round(total * 100)
+    print("|| bag/views.py || STRIPE TOTAL: ", stripe_total, type(stripe_total))
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    if not stripe_public_key:
+        message.warning(request, 'Stripe public key is missing. \
+             Did you forget to set it in your enviroment?')
+    
+
+    context = {
+        'order_number': order_number,
+        'category': category,
+        'price': price,
+        'stripe_public_key': stripe_public_key,
+        'clent_secret': intent.client_secret,
+    }
+
+    return render(request, 'bag/checkout.html', context)
