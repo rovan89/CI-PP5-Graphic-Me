@@ -5,6 +5,9 @@ body {
     flex-direction: column;
 }
 
+.main-content-container {
+    padding-top: 10%;
+}
 
 /* Navigation */
 
@@ -128,6 +131,21 @@ footer {
     margin-bottom: 100px;
 }
 
+/* Message Container */
+.message-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 100;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
 /* Media Queries */
 
   @media screen and (max-width: 800px) {
@@ -144,6 +162,12 @@ footer {
 
     .index_hero_image {
         padding-top: 400px ; 
+    }
+
+    /* Main Content */
+
+    .main-content-container {
+        padding-top: 30%;
     }
 
     /* Site Buttons */
