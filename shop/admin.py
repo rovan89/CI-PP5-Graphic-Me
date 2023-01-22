@@ -3,7 +3,10 @@ from .models import Order, OrderDesignItem
 
 class OrderDesignItemAdminInline(admin.TabularInline):
     model = OrderDesignItem
-    readonly_fields = ('design_order_total',)
+    readonly_fields = (
+        'design_order_total',
+    )
+
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -23,10 +26,13 @@ class OrderAdmin(admin.ModelAdmin):
         'user',
         'category',
         'number_of_concepts',
-        'price',
+        'grand_total',
         'created_on',
     )
 
-    ordering =('-created_on',)
+    ordering = ('-created_on',)
+
 
 admin.site.register(Order, OrderAdmin)
+
+
