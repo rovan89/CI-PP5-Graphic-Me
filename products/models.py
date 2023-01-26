@@ -18,7 +18,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     id = models.BigAutoField(primary_key=True)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250, blank=True)
     description = models.TextField()
     size = models.BooleanField()
