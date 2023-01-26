@@ -32,6 +32,7 @@ class Order(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
     paid = models.BooleanField(default=False)
+    date = models.DateTimeField(auto_now_add=True)
 
     def _generate_order_number(self):
         """ Generate a random, unique order number using UUID """
@@ -43,7 +44,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery cost
         """
-        self.grand_total 
+        self.grand_total
 
     def save(self, *args, **kwargs):
         """" Override original save method and set order number """
