@@ -36,7 +36,7 @@
                     <input type="submit" class="site_btn_blu mt-5" value="Add to Bag">
                 </div>
                 -->
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}" data-user_id="{{ current_user }}">
             </div>
         </form>
     </div>
