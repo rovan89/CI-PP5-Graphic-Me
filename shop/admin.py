@@ -24,6 +24,7 @@ class OrderAdmin(admin.ModelAdmin):
         'id',
         'order_number',
         'user',
+        'user_profile',
         'category',
         'number_of_concepts',
         'grand_total',
