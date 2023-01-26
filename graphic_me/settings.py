@@ -22,9 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
+#SECRET_KEY = 'django-insecure--eyi2&74v&-1s&lr(k)2lo+rreh4$hnz&2r(fhl(6906k7$l^='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['graphic-me.herokuapp.com', 'localhost']
 
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'portfolio',
+    'profiles',
     'shop',
     'bag',
 
@@ -107,7 +111,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -200,3 +204,20 @@ DISCOUNT_PERCENTAGE = 10
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = 'pk_test_51M1amaG7GfWqWKFm8y3AANp9eJ5YgtVx6l58p2p0x6pXDhlLA9zyRlq9WQTmGVo3nMAqcucyLj6m1kRSerF6Wf1h00ZupTZNZM'
+STRIPE_SECRET_KEY = 'sk_test_51M1amaG7GfWqWKFmcp3yYqlTMiJCEinzbGaUDhFFGJya97DoQ5vrtZBmWrvzztgEowzW2zcuYImsTMiehX1xEKA600PDoWcYD2'
