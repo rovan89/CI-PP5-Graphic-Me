@@ -3,8 +3,7 @@
 Graphic Me is a graphic design service. This website is allows user to search previous work done by the graphic design company, create a user profile account and order custom graphic for their needs. 
 
 
-
-Live website: https://
+Live website: https://graphic-me.herokuapp.com/
 
 ![Image of responsive design](assets/images/readme-images/responsive.PNG)
 
@@ -35,7 +34,7 @@ Live website: https://
 8. [Bugs](#Bugs)
 9. [Deployment](#deployment)
 10. [Credits](#credits)
-    1. [Quiz Images](#quiz-images)
+    1. [site Images](#site-images)
 11. [Acknowledgements](#acknowledgements)
 
 ## User Experience
@@ -67,6 +66,7 @@ Live website: https://
 - As a User I can leave a review so that I can tell the site owner what I thought of the service
 - As a User I can view products details in the portfolio so that a better understanding of the skillset
 
+![User Stories](media/PP5-User-Stories.PNG)
 
 ## Design
 ### Colour
@@ -122,6 +122,11 @@ Live website: https://
 - Allauth
 
 ## Testing 
+
+| **Feature** | **Action** | **Expected Result** | **Manual Testing** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|--------------------|
+| Product Detail | This allows using to get a closeup of the product and read about the product | Click on the image in the portfolio page and be brought to the Product detail page | This was done by clicking the image | Worked as expected | 
+
 ### Performance
 ### HTML
 
@@ -144,7 +149,7 @@ Live website: https://
 | The user creates an order and the total price is displayed | Match the users orders with the model to get the price of items | The fuction returned just the category id | I used category_item = Category.objects.all().values() to retrieve all valuse from the model |
 
 ## Credits
-### Quiz Images
+### Site Images
 - Fish&Co. - Image by pexels.com
 - Nothing to see here - Image by Aleksandar Pasaric, sourced from pexels.com
 - Route 66 - Image by Daniel Nettesheim, sourced from pexels.com
