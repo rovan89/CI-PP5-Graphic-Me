@@ -5,7 +5,7 @@ from shop.models import Order
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
+# @login_required
 def bag_contents(request):
 
     """ 
@@ -23,9 +23,9 @@ def bag_contents(request):
     grand_total = 0
     category_price = 0
     category_name = None
-    cat_id = 0
     concept_price = 0
     bag = request.session.get('bag', {})
+    category = Category.objects.all().values()
     
     if request.user.is_authenticated:
         # print(bag)
@@ -33,27 +33,32 @@ def bag_contents(request):
         # print(order_item)
         # print("| contexts.py | ORDER ITEM: ", order_item)
                     
-
         category = Category.objects.all().values()
         current_user = request.user.id
 
         order_user_id = None
 
-            
         for ordered_item in order_item:
-            # print(type(ordered_item))
+            print("|| bag/contexts.py || CATEGORY 1: ", ordered_item.category, type(ordered_item.category))
+            print("|| bag/contexts.py || CATEGORY Name 1: ", category, type(category))
             order_user_id = ordered_item.user_id
             # print("\n| contexts.py | ORDER_USER_ID: ", order_user_id)
             # print("\n| contexts.py | ORDER_USER_ID: ", order_user_id)
 
             ordered_category_id = ordered_item.user_id
-            # print("CATEGORY ORDER ID: ",  ordered_category_id)
+            print("CATEGORY ORDER ID: ",  ordered_category_id)
+            category_name = str(ordered_item.category)
+
+            if category_name == ordered_item.category:
+                print("WINNING")
+
             for i in category:
-                cat_id = i.get('id')
                 cat_name = i.get('friendly_name')
-                if cat_id == ordered_category_id:
-                    category_name = cat_name
+                if cat_name == category_name:
                     category_price = i.get('price')
+                    print("|| bag/contexts.py || CATEGORY: ", category_name, type(category_name))
+                    #print("|| bag/contexts.py || CATEGORY NAME I: ", cat_name, type(cat_name))
+
                     
             if current_user == order_user_id:
                 concept_bag = ordered_item.number_of_concepts
@@ -85,22 +90,15 @@ def bag_contents(request):
             # print("\n| contexts.py | ORDER USER I: ", i.get('total'))
             # print("\n| contexts.py | BAG ITEMS I: ", i)
             sub_total = i.get('total')
+
             if current_user == order_user_id:
                 cart_total = cart_total + sub_total
                 # print("\n| contexts.py | ORDER USER FOR LOOP: ", cart_total)
 
-
-            #for i in order_user:
-                #    for x in order_item:
-                #        i = str(i)
-                #        x = x.get("order_number")
-                #        x = str(x)
-                #       print("\n| contexts.py | ORDER USER FOR LOOP: ", i, type(i))
-                #       print("| contexts.py | ORDER_ITEM USER FOR: ", x, type(x))
-                #       print("_________________________________________________________________________")
-                #       if x == i:
-                #           print("WORKING")
-                            
+            
+            if ordered_item.paid is True:
+                bag_items.clear()
+                cart_total = 0                        
 
         if cart_total > settings.DISCOUNT_THRESHOLD:
             discount = cart_total * Decimal(settings.DISCOUNT_PERCENTAGE / 100)
@@ -111,6 +109,7 @@ def bag_contents(request):
         context = {
             'bag_items': bag_items,
             'ordered_items': ordered_items,
+            'category_name': category_name,
             'category_price': category_price,
             'total': cart_total,
             'product_count': product_count,
