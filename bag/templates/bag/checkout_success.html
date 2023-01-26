@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mian-container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Thank You</h2>
+            <hr>
+            <h3>Your Order</h3>
+            <p>When your order is complete it will be sent to you vis email.</p>
+            <p>If you have any questions or want to make any additional changes changes please contact us.</p>
+            <div class="table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item Number</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Category Price</th>
+                            <th scope="col">Number of Concepts</th>
+                            <th scope="col">Concpet Price</th>
+                            <th scope="col">Item Price</th>
+                        </tr>
+                    </thead>
+                    {% for item in current_bag %}
+                        <tr>
+                            <td class="py-1">
+                                <p class="my-0">{{ item.ordered_item }}</p>
+                            </td>      
+                            <td class="py-1">
+                                <p class="my-0">{{ item.category_name }}</p>
+                            </td>                                
+                            <td class="py-1">
+                                <p class="my-0">${{ item.category_price }}</p>
+                            </td>
+                            <td class="py-1">
+                                <p class="my-0">{{ item.ordered_item.number_of_concepts }}</p>
+                            </td>
+                            <td class="py-1">
+                                <p class="my-0">${{ item.concept_price }}</p>
+                            </td>
+                            <td class="py-1">
+                                <p class="my-0">{{ item.ordered_item.image }}</p>
+                            </td>
+                            <td class="py-1">
+                                <p class="my-0">${{ item.total }}</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            <p>See below you order. A Confirmation email has been sent to <!--<strong>{{ order.email }}</strong>--></p>
+        </div>
+    </div>
+
+    <div class="row">
+        
+    </div>
+</div>
+
+{% endblock %}
