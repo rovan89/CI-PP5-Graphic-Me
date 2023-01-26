@@ -58,7 +58,7 @@
                                 <form class="form" method="POST" action="{% url 'remove_from_bag' item.ordered_item%}">
                                     {% csrf_token %}
                                     <td class="py-1">
-                                        <button class="my-0 remove-item" id="remove_{{ item.ordered_item  }}">Remove Item</button>
+                                        <button class="my-0 remove-item" id="remove_{{ item.ordered_item }}">Remove Item</button>
                                     </td>
                                     <td class="py-1">
                                 </form>
