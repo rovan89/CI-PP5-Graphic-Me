@@ -39,15 +39,17 @@ def bag_contents(request):
         order_user_id = None
 
         for ordered_item in order_item:
-            print("|| bag/contexts.py || CATEGORY 1: ", ordered_item.category, type(ordered_item.category))
-            print("|| bag/contexts.py || CATEGORY Name 1: ", category, type(category))
+            #print("|| bag/contexts.py || CATEGORY 1: ", ordered_item.category, type(ordered_item.category))
+            #print("|| bag/contexts.py || CATEGORY Name 1: ", category, type(category))
             order_user_id = ordered_item.user_id
             # print("\n| contexts.py | ORDER_USER_ID: ", order_user_id)
             # print("\n| contexts.py | ORDER_USER_ID: ", order_user_id)
 
             ordered_category_id = ordered_item.user_id
-            print("CATEGORY ORDER ID: ",  ordered_category_id)
+            #print("CATEGORY ORDER ID: ",  ordered_category_id)
             category_name = str(ordered_item.category)
+            is_paid = ordered_item.paid
+            print("\n| contexts.py | PAID: ", ordered_item.paid)
 
             if category_name == ordered_item.category:
                 print("WINNING")
@@ -56,11 +58,11 @@ def bag_contents(request):
                 cat_name = i.get('friendly_name')
                 if cat_name == category_name:
                     category_price = i.get('price')
-                    print("|| bag/contexts.py || CATEGORY: ", category_name, type(category_name))
+                    # print("|| bag/contexts.py || CATEGORY: ", category_name, type(category_name))
                     #print("|| bag/contexts.py || CATEGORY NAME I: ", cat_name, type(cat_name))
 
                     
-            if current_user == order_user_id:
+            if current_user == order_user_id and ordered_item.paid is not True:
                 concept_bag = ordered_item.number_of_concepts
                 concept_price = 100 * concept_bag
 
@@ -71,6 +73,7 @@ def bag_contents(request):
                     'concept_price': concept_price,
                     'category_price': category_price,
                     'category_name': category_name,
+                    'is_paid': is_paid,
                     'total': total,
                 }) 
 
@@ -79,6 +82,7 @@ def bag_contents(request):
                     'concept_price': concept_price,
                     'category_price': category_price,
                     'category_name': category_name,
+                    'is_paid': is_paid,
                     'total': total,
                 })
         
@@ -112,6 +116,7 @@ def bag_contents(request):
             'category_name': category_name,
             'category_price': category_price,
             'total': cart_total,
+            'is_paid': is_paid,
             'product_count': product_count,
             'discount': discount,
             'grand_total': grand_total,
