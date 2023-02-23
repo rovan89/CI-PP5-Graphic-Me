@@ -8,6 +8,7 @@ from products.models import Product
 from shop.models import Order, OrderDesignItem
 from shop.forms import OrderForm
 from bag.contexts import bag_contents
+from profiles.models import UserProfile
 
 
 # @login_required
@@ -151,16 +152,15 @@ def checkout(request):
             # print("\n|| bag/views.py || ORDER FORM: ", order_form)
 
             if order_form.is_valid():
-                #print("\n|| bag/views.py || ORDER FORM IS VALID! ")
+                print("\n|| bag/views.py || ORDER FORM IS VALID! ", order_form.is_valid())
                 order = order_form.save(commit=False)
                 order.user = request.user
                 order.save()
-                for ordered_item in current_bag:
-                    #print("\n|| bag/views.py || SAVING BAG ITEMS: ", ordered_item)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderDesignItem(
-                            order=order_number
-                        )
+
+                if isinstance(item_data, int):
+                    order_line_item = OrderDesignItem(
+                        order=order_number
+                    )
 
                 order_line_item = OrderDesignItem(
                     order=order_unit,
@@ -219,21 +219,21 @@ def checkout_success(request):
     """
     current_bag = bag_contents(request)
     current_bag = current_bag['bag_items']
-    #print("\n|| bag/views.py || CURRENT BAG 1: ", current_bag, type(current_bag))
 
-    # save_info = request.sesson.get('save_info')
-    # order = get_object_or_404(Order, order_number=order_number)
-    #messages.success(request, f'Order successfully processed! \
-        #A confirmation email will be sent to {order.email}')
     print("|| bag/views.py checkout_success || REQUEST: ", request.POST.items(), type(request))
 
     order_item = Order.objects.filter(user=request.user)
+    print("|| bag/views.py checkout_success || order_item: ", order_item)
     
+    
+    
+
     for ordered_item in order_item:
-        ordered_item.paid = True
+        print("|| bag/views.py checkout_success || ordered_item: ", ordered_item, type(ordered_item))
+
+        ordered_item.paid=True
+        ordered_item.save()
         paid = ordered_item.paid
-        #print("|| bag/contexts.py checkout_success || PAID: ", paid, type(paid))
-        #ordered_item.save()
         
     template = 'bag/checkout_success.html'
     context = {
