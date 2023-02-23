@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center mb-5">About</h2>
+    <div class="container-fluid">
+        <div class="row text-center justify-content-center ">
+            <div class=" about-card p-2">
+                <div class="row text-center justify-content-center pt-5">
+                    <h3>Founder - Gerry Smith</h3>
+                </div>
+                <div class="row text-center justify-content-center pt-2">
+                    <img src="media/about/pexels-daniel-xavier-1212984.jpg" alt="Picture of Gerry the founder of Graphic Me" class="h-50 w-50 bg-primary">
+                </div>
+                <div class="row text-center justify-content-center">
+                    <small>Photo provided by Daniel Xavi</small>
+                </div>
+                <div class="row  text-center justify-content-center pt-5">
+                    <p class="text-center about-text">
+                        "Hi! My name is Gerry Smith. As the son of an artist and architect I have always been surrounded by creativity.
+                        I got my start as a graphic designer by creating a logo for my dad's clents.
+                    </p>
+                    <p class="text-center about-text">
+                        As someone who also completed Graphic Design at MTU, I can promise you I know what good graphics look like. 
+                        Not only is this something I studied it is my life passion and has become part of who I am.
+                    </p>
+                    <p class="text-center about-text">
+                        When you're ready for your brand to reach its next level of success, <a href="{% url 'contact' %}">call</a> or <a href="{% url 'contact' %}">email me</a>. 
+                        I have the right tools and expertise to turn your brand into a household name. See it for yourself in my "work" section."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}
