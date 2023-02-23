@@ -1,0 +1,6 @@
+.contact-card {
+    height: 50vh;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 3px 8px;
+}
