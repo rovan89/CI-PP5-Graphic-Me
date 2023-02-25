@@ -14,8 +14,9 @@ Live website: https://graphic-me.herokuapp.com/
         1. [Site Owner](#site-owner)
         2. [User](#user)
 3. [Design](#design) 
-    1. [Colour](#colours)
-    2. [Fonts](#fonts)
+    1. [Wireframes](#wireframes)
+    2. [Colour](#colours)
+    3. [Fonts](#fonts)
 4. [Features](#features)
     1. [Portfolio Display](#portfolio_display_section)
     2. [Portfolio Detail Display](#portfolio_display_section_section)
@@ -69,6 +70,69 @@ Live website: https://graphic-me.herokuapp.com/
 ![User Stories](media/PP5-User-Stories.PNG)
 
 ## Design
+
+### Wireframes
+
+<details>
+<summary>Home Page</summary>
+<br>
+<summary>Desktop View</summary>
+<img src="media/readme_images/home-page-desktop-view.PNG">
+<hr>
+<br>
+<summary>Tablet View</summary>
+<img src="media/readme_images/home-page-tablet-view.PNG">
+<hr>
+<br>
+<summary>Moblie View</summary>
+<img src="media/readme_images/home-page-mobile-view.PNG">
+</details>
+
+<details>
+<summary>Portfolio Page</summary>
+<br>
+<summary>Desktop View</summary>
+<img src="media/README/portfolio-page-desktop-view.jpg">
+<hr>
+<br>
+<summary>Tablet View</summary>
+<img src="media/README/home-page-tablet-view.PNG">
+<hr>
+<br>
+<summary>Moblie View</summary>
+<img src="media/README/home-page-mobile-view.PNG">
+</details>
+
+<details>
+<summary>Order Page</summary>
+<br>
+<summary>Desktop View</summary>
+<img src="media/README/order-page-desktop-view.jpg">
+<hr>
+<br>
+<summary>Tablet View</summary>
+<img src="media/README/order-page-tablet-view.jpg">
+<hr>
+<br>
+<summary>Moblie View</summary>
+<img src="media/README/order-page-mobile-view.jpg">
+</details>
+
+<details>
+<summary>About Page</summary>
+<br>
+<summary>Desktop View</summary>
+<img src="media/README/about-page-desktop-view.jpg">
+<hr>
+<br>
+<summary>Tablet View</summary>
+<img src="media/README/about-page-tablet-view.jpg">
+<hr>
+<br>
+<summary>Moblie View</summary>
+<img src="media/README/about-page-mobile-view.jpg">
+</details>
+
 ### Colour
 ![Image of color choices](media/README/Website-colours.PNG)
 
