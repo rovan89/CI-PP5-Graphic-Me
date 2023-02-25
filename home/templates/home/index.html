@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Header -->
-    <div class="container index_hero_image h-100">
+    <div class="container h-10">
         <div class="row h-100">
             <div class="col-3 col-md-12">
                 <a href="{% url 'shop' %}">
@@ -30,25 +30,31 @@
     <div class="container">
         <div class="row ">
             <div class="col-4 portfolio_cards">
-                <img src="media/home/branding-eva-bronzini-7661627.jpg" alt="Laptop screen with text" class="card-img-top">
-                <div class="card-body home_page_porfolio_cards_text">
-                    <h4 class="card-title text-center">Brand Design</h4>
-                    <p class="text-center"><strong>How to create versatile product branding?</strong> This is the right place for you! Check out our Brand Design portfolio and see what suits you</p>
-                </div>
+                <a href="{% url 'portfolio' %}?q=branding">
+                    <img src="media/home/branding-eva-bronzini-7661627.jpg" alt="Laptop screen with text" class="card-img-top">
+                    <div class="card-body home_page_porfolio_cards_text">
+                        <h4 class="card-title text-center">Brand Design</h4>
+                        <p class="text-center"><strong>How to create versatile product branding?</strong> This is the right place for you! Check out our Brand Design portfolio and see what suits you</p>
+                    </div>
+                </a>
             </div>
             <div class="col-4 portfolio_cards">
-                <img src="media/home/logo-karolina-grabowska-4219151.jpg" alt="#" class="card-img-top">
-                <div class="card-body home_page_porfolio_cards_text">
-                    <h4 class="card-title text-center">Logo Design</h4>
-                    <p class="text-center">Need a logo that stands out? We can <strong>create a versatile logo</strongm> for any brand</p>
-                </div>
+                <a href="{% url 'portfolio' %}?q=logo">
+                    <img src="media/home/logo-karolina-grabowska-4219151.jpg" alt="A person hand drawing designs" class="card-img-top">
+                    <div class="card-body home_page_porfolio_cards_text">
+                        <h4 class="card-title text-center">Logo Design</h4>
+                        <p class="text-center">Need a logo that stands out? We can <strong>create a versatile logo</strong> for any brand</p>
+                    </div>
+                </a>
             </div>
             <div class="col-4 portfolio_cards">
-                <img src="media/home/poster-cottonbro-3952223.jpg" alt="#" class="card-img-top">
-                <div class="card-body home_page_porfolio_cards_text">
-                    <h4 class="card-title text-center">Poster Design</h4>
-                    <p class="text-center ">Looking for an <strong>impactful poster design? </strong>Our posters are top class, see for yourself</p>
-                </div>
+                <a href="{% url 'portfolio' %}?q=poster">
+                    <img src="media/home/poster-cottonbro-3952223.jpg" alt="Someone holding a poster of hands being washed" class="card-img-top">
+                    <div class="card-body home_page_porfolio_cards_text">
+                        <h4 class="card-title text-center">Poster Design</h4>
+                        <p class="text-center ">Looking for an <strong>impactful poster design? </strong>Our posters are top class, see for yourself</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
