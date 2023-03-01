@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'graphic-me.urls'
+ROOT_URLCONF = 'graphic_me.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -120,7 +120,7 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'graphic-me.wsgi.application'
+WSGI_APPLICATION = 'graphic_me.wsgi.application'
 
 
 # Database
