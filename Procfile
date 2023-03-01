@@ -1,1 +1,1 @@
-web: gunicorn graphic_me.wsgi:application
+web: gunicorn graphic-me.wsgi:application
