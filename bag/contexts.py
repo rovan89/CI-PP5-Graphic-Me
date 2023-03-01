@@ -17,6 +17,7 @@ def bag_contents(request):
     bag_items = []
     ordered_items = []
     total = 0
+    is_paid = None
     cart_total = 0
     discount = 0
     product_count = 0
@@ -49,8 +50,8 @@ def bag_contents(request):
             #print("CATEGORY ORDER ID: ",  ordered_category_id)
             category_name = str(ordered_item.category)
             is_paid = ordered_item.paid
-            print("\n| contexts.py | PAID: ", ordered_item.paid)
-
+            print("\n| contexts.py | PAID: ", is_paid, type(is_paid))
+    
             if category_name == ordered_item.category:
                 print("WINNING")
 
@@ -101,7 +102,6 @@ def bag_contents(request):
 
             
             if ordered_item.paid is True:
-                bag_items.clear()
                 cart_total = 0                        
 
         if cart_total > settings.DISCOUNT_THRESHOLD:
@@ -109,6 +109,9 @@ def bag_contents(request):
             grand_total = cart_total - discount
         else:
             grand_total = cart_total
+
+        print("\n| contexts.py | All Ordered Items: ", ordered_items)
+        print("\n| contexts.py | All Bag Items: ", bag_items)
 
         context = {
             'bag_items': bag_items,
