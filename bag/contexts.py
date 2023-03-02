@@ -32,8 +32,8 @@ def bag_contents(request):
         # print(bag)
         order_item = Order.objects.filter(user=request.user)
         # print(order_item)
-        # print("| contexts.py | ORDER ITEM: ", order_item)
-                    
+        print("| contexts.py | ORDER ITEM: ", order_item)
+        
         category = Category.objects.all().values()
         current_user = request.user.id
 
@@ -51,6 +51,7 @@ def bag_contents(request):
             category_name = str(ordered_item.category)
             is_paid = ordered_item.paid
             print("\n| contexts.py | PAID: ", is_paid, type(is_paid))
+            date =  ordered_item.date
     
             if category_name == ordered_item.category:
                 print("WINNING")
@@ -74,6 +75,7 @@ def bag_contents(request):
                     'concept_price': concept_price,
                     'category_price': category_price,
                     'category_name': category_name,
+                    'date': date,
                     'is_paid': is_paid,
                     'total': total,
                 }) 
@@ -111,6 +113,7 @@ def bag_contents(request):
         print("\n| contexts.py | All Bag Items: ", bag_items)
 
         context = {
+            'order_item': order_item,
             'bag_items': bag_items,
             'ordered_items': ordered_items,
             'category_name': category_name,
