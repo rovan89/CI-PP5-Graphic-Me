@@ -1,4 +1,5 @@
 # Graphic Me
+<hr>
 
 Graphic Me is a graphic design service. This website is allows user to search previous work done by the graphic design company, create a user profile account and order custom graphic for their needs. 
 
@@ -7,7 +8,10 @@ Live website: https://graphic-me.herokuapp.com/
 
 ![Image of responsive design](assets/images/readme-images/responsive.PNG)
 
+
 ## Table of Content
+<hr>
+
 1. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Stories](#user-stories)
@@ -38,7 +42,13 @@ Live website: https://graphic-me.herokuapp.com/
     1. [site Images](#site-images)
 11. [Acknowledgements](#acknowledgements)
 
+
+## Business Model
+<hr>
+
+
 ## User Experience
+<hr>
 
 ### Target Audience
 - People looking for a grahic design service
@@ -74,20 +84,23 @@ Live website: https://graphic-me.herokuapp.com/
 </details>
 <br>
 
+
 ## Design
+<hr>
 
 ### Wireframes
 
 <details>
 <summary>Home Page</summary>
 <br>
+
 <summary>Desktop View</summary>
 <img src="media/README/home-page-desktop-view.PNG">
-<hr>
+
 <br>
 <summary>Tablet View</summary>
 <img src="media/README/home-page-tablet-view.PNG">
-<hr>
+
 <br>
 <summary>Moblie View</summary>
 <img src="media/README/home-page-mobile-view.PNG">
@@ -98,11 +111,11 @@ Live website: https://graphic-me.herokuapp.com/
 <br>
 <summary>Desktop View</summary>
 <img src="media/README/portfolio-page-desktop-view.jpg">
-<hr>
+
 <br>
 <summary>Tablet View</summary>
 <img src="media/README/home-page-tablet-view.PNG">
-<hr>
+
 <br>
 <summary>Moblie View</summary>
 <img src="media/README/home-page-mobile-view.PNG">
@@ -113,11 +126,11 @@ Live website: https://graphic-me.herokuapp.com/
 <br>
 <summary>Desktop View</summary>
 <img src="media/README/order-page-desktop-view.png.jpg">
-<hr>
+
 <br>
 <summary>Tablet View</summary>
 <img src="media/README/order-page-tablet-view.jpg">
-<hr>
+
 <br>
 <summary>Moblie View</summary>
 <img src="media/README/order-page-mobile-view.jpg">
@@ -128,17 +141,16 @@ Live website: https://graphic-me.herokuapp.com/
 <br>
 <summary>Desktop View</summary>
 <img src="media/README/about-page-desktop-view.jpg">
-<hr>
+
 <br>
 <summary>Tablet View</summary>
 <img src="media/README/about-page-tablet-view.jpg">
-<hr>
+
 <br>
 <summary>Moblie View</summary>
 <img src="media/README/about-page-mobile-view.jpg">
 </details>
 <br>
-<hr>
 
 ### Colour
 <details>
@@ -150,9 +162,9 @@ Live website: https://graphic-me.herokuapp.com/
 ### Fonts
 - 
 
-<hr>
 
 ## Features
+<hr>
 
 ### Portfolio Display
 - This section allows the user to browse all categories in the portfolio
@@ -197,26 +209,56 @@ Live website: https://graphic-me.herokuapp.com/
 <img src="media/README/user-order-form.PNG">
 </details>
 <br>
-<hr>
 
 ## Technologies Used
+<hr>
 
 ### Languages
 - HTML
 - CSS
 - Python
+- JavaScript
 
 ### Frameworks & Tools
-- Git
-- GitHub
-- Gitpod
-- Django
-- Bootstrap4
-- Pillow
-- Allauth
-<hr>
+- AWS - Used for hosting static files
+- GitHub - This is the repository used
+- Gitpod - This is the IDE used
+- Bootstrap4 - Used for general styleing and layout
+- JustInMind - This was the tool used for wireframe mockups
+- Font Awesome - Used for icons
+- Stripe - To handel the payment process
+
+
+### Python Libraries
+- antiorm==1.2.1
+- asgiref==3.6.0
+- backports.zoneinfo==0.2.1
+- boto3==1.12.42
+- botocore==1.15.42
+- db==0.1.1
+- db-sqlite3==0.0.1
+- dj-database-url==0.5.0
+- Django==3.2
+- django-allauth==0.41.0
+- django-crispy-forms==1.14.0
+- django-storages==1.9.1
+- docutils==0.15.2
+- gunicorn==20.0.4
+- jmespath==0.9.5
+- oauthlib==3.1.0
+- Pillow==7.0.0
+- psycopg2==2.8.6
+- psycopg2-binary==2.8.5
+- python3-openid==3.1.0
+- pytz==2019.3
+- requests-oauthlib==1.3.0
+- s3transfer==0.3.3
+- sqlparse==0.3.0
+- stripe==5.0.0
+- urllib3==1.25.11
 
 ## Testing 
+<hr>
 
 | **Feature** | **Action** | **Expected Result** | **Manual Testing** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|--------------------|
@@ -230,7 +272,6 @@ Live website: https://graphic-me.herokuapp.com/
 | Checkout | This allows users to make a payment for thier order | The user enters their payment details and the payment is recieved | This was done by creating a sample order and paying using the stripe test card | Worked as expected |
 | Footer Navigation | This allows users to navigate the site in the footer of the page | The user is redirected to their chosen page | This was done by clicking all of the navigation links | Worked as expected | 
 <br>
-<hr>
 
 ### Performance
 ### HTML
@@ -238,47 +279,93 @@ Live website: https://graphic-me.herokuapp.com/
 
 <details>
 <summary>Home</summary>
-<img src="media/README/user-order-form.PNG">
+<img src="#">
 </details>
 
-- Portfolio
-- Portfolio Detail
-- Contact
-- About
-- Bag
-- Edit Item
-- Checkout
-- Checkout Success
-- Profile
-- Order
+<details>
+<summary>Portfolio</summary>
+<img src="#">
+</details>
 
+<details>
+<summary>Portfolio Detail</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Contact</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>About</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Bag</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Edit Item</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Checkout</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Checkout Success</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Profile</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Order</summary>
+<img src="#">
+</details>
+<br>
 
 ### CSS
 - 
 
+<br>
+
 ### Javascript
 - 
+
+<br>
 
 ### Lighthouse
 
 - 
 
 <br>
-<hr>
+
 
 ## Bugs
+<hr>
+
 | **Feature / Function** | **Expected Result** | **Actual Result** | **Action** |
 |-------------|------------|---------------------|-------------------|
 | Discount applied after order reaches threshold | When the user has ordered more that the discount threshold the 10% discount will be applied to their order | When the user orders over the threshold 10% of the cost id added to the order | In bag/context.py change grand_total = total + discountto grand_total = total - discount |
 | The user creates an order and the total price is displayed | Match the users orders with the model to get the price of items | The fuction returned just the category id | I used category_item = Category.objects.all().values() to retrieve all valuse from the model |
 | Checkout Success | When a user completes a payment the bag is empty and the total is 0 | The price of all items order by the user paid or not would be in the grand total | Created an if statment in the template to check is the paid var was False | 
-| Remove Item From Bag | When the user clicks the remove item it would remove the item and redirect them back to the bag page | The item is removed but the user is not redirected  | Change the return to render bag.html | 
-| Strip Payment Error Message| When the user has a failed payment a message pop up appears to inform the user of the error | The error message appears every time the user opens the checkout page  | ************************* | 
+| Remove Item From Bag | When the user clicks the remove item it would remove the item and redirect them back to the bag page | The item is removed but the user is not redirected  | Change the return to render bag.html |
 | Footer Navigation | The navigation redirects the user to the correct page | The home, portfolio and order urls don't direct the user to the page | Create {% url '' %} path for each  |
-| Depolyed Website | The website is fully functional, live and accessable to all on the internt | When the url is searched a Error 500 is returned  | Change DEBUG in settings to True | 
+| Depolyed Website | The website is fully functional, live and accessable to all on the internt | When the url is searched a Error 500 is returned  | Change psygopg2 to version 2.8.6 | 
 <br>
 
+
 ## Deployment
+<hr>
 Heroku and AWS was used for the deployment of this program.
 
 ### Heroku
@@ -312,7 +399,12 @@ Heroku and AWS was used for the deployment of this program.
 12. Add the Keys to the project and Heroku config vars
 <br>
 
+
 ## Credits
+<hr>
+
+
+
 ### Site Images
 - Fish&Co. - Image by pexels.com
 - Nothing to see here - Image by Aleksandar Pasaric, sourced from pexels.com
