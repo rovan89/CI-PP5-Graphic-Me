@@ -40,21 +40,22 @@ def remove_from_bag(request, ordered_item):
     print("|| bag/views.py || Request Method Remove from Bag: ", request.method)
 
     in_bag_order_item = Order.objects.filter(user=request.user)
-    print("|| bag/views.py || All ORDERED ITEMS = ", in_bag_order_item, type(in_bag_order_item))
 
+        
     print("|| bag/views.py || ORDERED ITEM: ", ordered_item, type(ordered_item))
     try:
         for i in in_bag_order_item:
             item = str(i)
-            print("|| bag/views.py || ORDER ITEM I: ", i, type(i))
+
             if item == ordered_item:
             # order_number = in_bag_order_item.get('order_number')
-                # print("|| bag/views.py || ORDER ITEM I = ", item, type(item))
+                print("|| bag/views.py || ORDER ITEM > = ", ordered_item, type(ordered_item))
                 # print("|| bag/views.py || ORDER NUMBER = ", order_number, type(order_number))
 
                 i.delete()
+                messages.success(request, f'Item number {i} was removed from bag')
                 print("|| bag/views.py || WORKING")
-                return HttpResponse(status=200)
+                return render(request, 'bag/bag.html')
 
     except Exception as e:
         return HttpResponse(status=500)
@@ -176,16 +177,11 @@ def checkout(request):
            # order_line_item = Order(order_id)
 
             request.session['save_info'] = 'save_info' in request.POST
-     #       print("|| bag/views.py || ORDER ORDER NUMBER: ", order, type(order))
             return redirect('checkout_success')
     else:
         current_bag = bag_contents(request)
-        # print("|| bag/views.py || ELSE CURRENT BAG: ", current_bag, type(current_bag))
-        messages.error(request, 'There was an error with your order. \
-            Please check your information')
-
         total = current_bag['grand_total']
-        #print("|| bag/views.py || TOTAL: ", total, type(total))
+
 
 
         stripe_total = round(total * 100)
@@ -230,7 +226,7 @@ def checkout_success(request):
 
     for ordered_item in order_item:
         print("|| bag/views.py checkout_success || ordered_item: ", ordered_item, type(ordered_item))
-
+    
         ordered_item.paid=True
         ordered_item.save()
         paid = ordered_item.paid
