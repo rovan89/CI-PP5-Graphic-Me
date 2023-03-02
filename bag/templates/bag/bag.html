@@ -32,42 +32,46 @@
                             </thead>
 
                             {% for item in ordered_items %}
-                            
-                            <tr>
-                                <td class="py-1">
-                                    <p class="my-0">{{ item.category_name }}</p>
-                                </td>                                
-                                <td class="py-1">
-                                    <p class="my-0">{{ item.ordered_item.description }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">{{ item.ordered_item.number_of_concepts }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">${{ item.category_price }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">${{ item.concept_price }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">{{ item.ordered_item.image }}</p>
-                                </td>
-                                <td class="py-1">
-                                    <p class="my-0">${{ item.total }}</p>
-                                </td>
-                                <form class="form" method="POST" action="{% url 'remove_from_bag' item.ordered_item%}">
-                                    {% csrf_token %}
+                                {% if item.paid is not True %}
+                                <tr>
                                     <td class="py-1">
-                                        <button class="my-0 remove-item" id="remove_{{ item.ordered_item }}">Remove Item</button>
+                                        <p class="my-0">{{ item.category_name }}</p>
+                                    </td>                                
+                                    <td class="py-1">
+                                        <p class="my-0">{{ item.ordered_item.description }}</p>
                                     </td>
                                     <td class="py-1">
-                                </form>
-                                <td class="py-1">
-                                    <a href="edit/{{ item.ordered_item.id }}">
-                                        <button>Edit Item</button>
-                                    </a>
-                                </td>
-                            </tr>
+                                        <p class="my-0">{{ item.ordered_item.number_of_concepts }}</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <p class="my-0">${{ item.category_price }}</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <p class="my-0">${{ item.concept_price }}</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <p class="my-0">{{ item.ordered_item.image }}</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <p class="my-0">${{ item.total }}</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <p class="my-0">{{ item.is_paid }}</p>
+                                    </td> 
+                                    <form class="form" method="POST" action="{% url 'remove_from_bag' item.ordered_item %}">
+                                        {% csrf_token %}
+                                        <td class="py-1">
+                                            <button class="my-0 remove-item" id="remove_{{ item.ordered_item }}">Remove Item</button>
+                                        </td>
+                                        <td class="py-1">
+                                    </form>
+                                    <td class="py-1">
+                                        <a href="edit/{{ item.ordered_item.id }}">
+                                            <button>Edit Item</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endif %}
                             {% endfor %}
                         </table>
                         <br>
