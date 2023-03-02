@@ -69,7 +69,7 @@ Live website: https://graphic-me.herokuapp.com/
 
 
 <details>
-<summary>Portfolio Display Image</summary>
+<summary>User Stories Image</summary>
 <img src="media/PP5-User-Stories.PNG">
 </details>
 <br>
@@ -137,6 +137,8 @@ Live website: https://graphic-me.herokuapp.com/
 <summary>Moblie View</summary>
 <img src="media/README/about-page-mobile-view.jpg">
 </details>
+<br>
+<hr>
 
 ### Colour
 <details>
@@ -147,6 +149,8 @@ Live website: https://graphic-me.herokuapp.com/
 
 ### Fonts
 - 
+
+<hr>
 
 ## Features
 
@@ -193,6 +197,7 @@ Live website: https://graphic-me.herokuapp.com/
 <img src="media/README/user-order-form.PNG">
 </details>
 <br>
+<hr>
 
 ## Technologies Used
 
@@ -209,17 +214,44 @@ Live website: https://graphic-me.herokuapp.com/
 - Bootstrap4
 - Pillow
 - Allauth
+<hr>
 
 ## Testing 
 
 | **Feature** | **Action** | **Expected Result** | **Manual Testing** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|--------------------|
 | Product Detail | This allows using to get a closeup of the product and read about the product | Click on the image in the portfolio page and be brought to the Product detail page | This was done by clicking the image | Worked as expected | 
+| Header Navigation | This allows users to navigate the site in the header of the page | The user is redirected to their chosen page | This was done by clicking all of the navigation links | Worked as expected | 
+| Searchbar | This allows users to search products | The user is redirected to any product with the key word in the title or description | This was done by key words into the searchbar | Worked as expected |
+| User Account | This allows users to register, login, logout, edit profile | The user is redirected to any product with the key word in the title or description | This was done by key words into the searchbar | Worked as expected |
+| Order | This allows users to create an order | The user fills out a form of what they would like their oorder to be and adds it to the bag | This was done by creating a sample order and adding multiple items | Worked as expected |
+| Remove Item | This allows users to remove an item from the shopping bag | The user clicks the remove button next to the item | This was done by creating a sample order and removing it | Worked as expected |
+| Remove Item | This allows users to edit an item from the shopping bag | The user clicks the edit item button next to the item | This was done by creating a sample order and editing it | Worked as expected |
+| Checkout | This allows users to make a payment for thier order | The user enters their payment details and the payment is recieved | This was done by creating a sample order and paying using the stripe test card | Worked as expected |
+| Footer Navigation | This allows users to navigate the site in the footer of the page | The user is redirected to their chosen page | This was done by clicking all of the navigation links | Worked as expected | 
+<br>
+<hr>
 
 ### Performance
 ### HTML
 
-- 
+
+<details>
+<summary>Home</summary>
+<img src="media/README/user-order-form.PNG">
+</details>
+
+- Portfolio
+- Portfolio Detail
+- Contact
+- About
+- Bag
+- Edit Item
+- Checkout
+- Checkout Success
+- Profile
+- Order
+
 
 ### CSS
 - 
@@ -231,11 +263,20 @@ Live website: https://graphic-me.herokuapp.com/
 
 - 
 
+<br>
+<hr>
+
 ## Bugs
 | **Feature / Function** | **Expected Result** | **Actual Result** | **Action** |
 |-------------|------------|---------------------|-------------------|
 | Discount applied after order reaches threshold | When the user has ordered more that the discount threshold the 10% discount will be applied to their order | When the user orders over the threshold 10% of the cost id added to the order | In bag/context.py change grand_total = total + discountto grand_total = total - discount |
 | The user creates an order and the total price is displayed | Match the users orders with the model to get the price of items | The fuction returned just the category id | I used category_item = Category.objects.all().values() to retrieve all valuse from the model |
+| Checkout Success | When a user completes a payment the bag is empty and the total is 0 | The price of all items order by the user paid or not would be in the grand total | Created an if statment in the template to check is the paid var was False | 
+| Remove Item From Bag | When the user clicks the remove item it would remove the item and redirect them back to the bag page | The item is removed but the user is not redirected  | Change the return to render bag.html | 
+| Strip Payment Error Message| When the user has a failed payment a message pop up appears to inform the user of the error | The error message appears every time the user opens the checkout page  | ************************* | 
+| Footer Navigation | The navigation redirects the user to the correct page | The home, portfolio and order urls don't direct the user to the page | Create {% url '' %} path for each  |
+| Depolyed Website | The website is fully functional, live and accessable to all on the internt | When the url is searched a Error 500 is returned  | Change DEBUG in settings to True | 
+<br>
 
 ## Deployment
 Heroku and AWS was used for the deployment of this program.
