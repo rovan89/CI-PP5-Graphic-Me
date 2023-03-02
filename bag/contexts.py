@@ -99,10 +99,7 @@ def bag_contents(request):
             if current_user == order_user_id:
                 cart_total = cart_total + sub_total
                 # print("\n| contexts.py | ORDER USER FOR LOOP: ", cart_total)
-
-            
-            if ordered_item.paid is True:
-                cart_total = 0                        
+                     
 
         if cart_total > settings.DISCOUNT_THRESHOLD:
             discount = cart_total * Decimal(settings.DISCOUNT_PERCENTAGE / 100)
@@ -129,6 +126,6 @@ def bag_contents(request):
         return context
     
     else:
-        
+
         return ordered_items
 
