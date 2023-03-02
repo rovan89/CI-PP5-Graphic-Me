@@ -18,7 +18,7 @@
 
 {% block content %}
 
-<div class="container main-content-container">
+<div class="container">
     <div class="row">
         <div class="col">
             <hr>
@@ -43,27 +43,26 @@
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
-                        <tr>Order Number</tr>
-                        <tr>Date</tr>
-                        <tr>Item</tr>
-                        <tr>Order Total</tr>
+                        <th>Date</th>
+                        <th>Order Number</th>
+                        <th>Item</th>
                     </thead>
                     <tbody>
-                        {% for order in orders %}
+                        
+                        {% for item in order_item %}
+                        {% if item.paid is True %}
                             <tr>
                                 <td>
-                                    {{ order.order_number|truncatechars:6 }}
+                                    {{ item.date |truncatechars:17 }}
                                 </td>
                                 <td>
-                                    {{ order.date }}
+                                    {{ item |truncatechars:12 }}
                                 </td>
                                 <td>
-                                    {{ order.category}}
-                                </td>
-                                <td>
-                                    {{ order.grand_total }}
+                                    {{ item.category }}
                                 </td>
                             </tr>
+                            {% endif %}
                         {% endfor %}
                     </tbody>
                 </table>
