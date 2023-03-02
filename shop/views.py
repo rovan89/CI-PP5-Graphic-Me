@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Order, OrderDesignItem
 from .forms import OrderForm
 from django.contrib import messages
 
+@login_required
 def shop_form(request):
     """ This view returns the shop page with form for customers to detail what they want"""
     current_user = request.user.id
