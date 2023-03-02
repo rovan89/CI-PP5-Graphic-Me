@@ -25,7 +25,7 @@ def bag_contents(request):
     category_price = 0
     category_name = None
     concept_price = 0
-    bag = request.session.get('bag', {})
+    # bag = request.session.get('bag', {})
     category = Category.objects.all().values()
     
     if request.user.is_authenticated:
