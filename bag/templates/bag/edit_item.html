@@ -4,8 +4,8 @@
 
 {% block content %}
 <!-- Header -->
-    <div class="container index_hero_image h-100">
-        <div class="row h-100">
+    <div class="container index_hero_image">
+        <div class="row">
             <div class="col-7 col-md-12 my-auto">
                 <h2>Edit Order</h2>
             </div>
@@ -21,7 +21,6 @@
             {{ form.description | as_crispy_field }}
             {{ form.number_of_concepts | as_crispy_field }}
             {{ form.image | as_crispy_field }}
-            {{ form.grand_total | as_crispy_field }}
             <button type="submit" class="site_btn_blu mt-5">Update Order</button>
     <!--
             <div class="row">
