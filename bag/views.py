@@ -25,13 +25,13 @@ def add_to_bag(request):
 
     # print("|| bag/views.py || ITEM DICT = ", request.POST.dict())
 
-    bag = request.session.get('bag', {})
+    #bag = request.session.get('bag', {})
     user_order = dict(request.POST.items())
     # print("|| bag/views.py || BAG: ", bag)
     #print("|| bag/views.py || REQUEST CURRENT USER",  request.user)   
     #print("|| bag/views.py || REQUEST USER ORDER",  user_order)   
     bag = user_order
-    request.session['bag'] = bag
+    # request.session['bag'] = bag
     return redirect("home")
 
 # @login_required
@@ -176,7 +176,7 @@ def checkout(request):
            # print("|| bag/views.py || ORDER ITEM: ", order_item, type(order_item))
            # order_line_item = Order(order_id)
 
-            request.session['save_info'] = 'save_info' in request.POST
+            # request.session['save_info'] = 'save_info' in request.POST
             return redirect('checkout_success')
     else:
         current_bag = bag_contents(request)
