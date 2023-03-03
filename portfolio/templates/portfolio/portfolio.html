@@ -30,6 +30,7 @@
                             {% if product.image %}
                                 <a href="{% url 'portfolio_detail' product.id %}">
                                     <img class="p-3" src="{{ MEDIA_URL }}portfolio-images/{{ product.image }}" alt="{{ product.name }}">
+                                    {{ product.image }}
                                 </a>
                             {% else %}
                                 <a href="{% url 'portfolio_detail' product.id %}">
