@@ -141,6 +141,16 @@ footer {
 .toast-capper {
     height: 2px;
 }
+
+/* Mailchimp */
+
+#mc_embed_signup{
+    background:#212426; 
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif;  
+    width:600px;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 990px) {
