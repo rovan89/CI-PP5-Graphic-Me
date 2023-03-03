@@ -4,7 +4,6 @@ from django import forms
 from .models import Order
 
 
-
 class OrderForm(ModelForm):
     class Meta:
         model = Order
@@ -15,7 +14,6 @@ class OrderForm(ModelForm):
             'description',
             'number_of_concepts',
             'image',
-            
         )
 
     def __init__(self, *args, **kwargs):
@@ -27,5 +25,3 @@ class OrderForm(ModelForm):
         placeholders = {
 
         }
-
-        
