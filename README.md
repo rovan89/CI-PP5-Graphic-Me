@@ -45,7 +45,24 @@ Live website: https://graphic-me.herokuapp.com/
 
 ## Business Model
 <hr>
+Graphic Me is a B2B bussiness model, foucesd on designing logos, posters and product branding. The main goal is to focus on designing marketable brands for small to medium sized businesses. This site is stuctured in a way that the customer can easily order and and give details on how they would like their product to look, including reference images, descriptions and have several concepts. 
 
+Once the project is completly desiged the user will recieve thier product via email to take further and used on thier product, marketing, branding and where ever else they see fit.
+
+The business model can be scaled with addition of hiering or outsourceing other graphic designers. 
+
+## SEO
+<hr>
+Keyword research was done by using Google tools. These were tested using long and short keywords. These have been used in the meta tags of the site and in other ares of text throughout the site.
+
+![Image of website keywords](media/README/graphic-me-key-words.jpg)
+
+
+<details>
+<summary>Key Word Research</summary>
+<img src="media/README/graphic-me-keyword-research.jpg">
+</details>
+<br>
 
 ## User Experience
 <hr>
@@ -313,17 +330,7 @@ Live website: https://graphic-me.herokuapp.com/
 </details>
 
 <details>
-<summary>Checkout</summary>
-<img src="#">
-</details>
-
-<details>
 <summary>Checkout Success</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Profile</summary>
 <img src="#">
 </details>
 
@@ -333,14 +340,233 @@ Live website: https://graphic-me.herokuapp.com/
 </details>
 <br>
 
-### CSS
-- 
+### CSS Validation
+
+<details>
+<summary>Home</summary>
+<img src="media/README/validation/css-validation-home-page.jpg">
+</details>
+
+<details>
+<summary>Portfolio</summary>
+<img src="media/README/validation/css-validation-home-page.jpg">
+</details>
+
+<details>
+<summary>Portfolio Detail</summary>
+<img src="media/README/validation/css-validation-portfolio-detail-page.jpg">
+</details>
+
+<details>
+<summary>Contact</summary>
+<img src="media/README/validation/css-validation-contact-page.jpg">
+</details>
+
+<details>
+<summary>About</summary>
+<img src="media/README/validation/css-validation-about-page.jpg">
+</details>
+
+<details>
+<summary>Bag</summary>
+<img src="media/README/validation/css-validation-bag-page.jpg">
+</details>
+
+<details>
+<summary>Edit Item</summary>
+<img src="media/README/validation/css-validation-edit-item-page.jpg">
+</details>
+
+<details>
+<summary>Checkout Success</summary>
+<img src="#">
+</details>
+
+<details>
+<summary>Order</summary>
+<img src="media/README/validation/css-validation-order-page.jpg">
+</details>
+<br>
 
 <br>
 
 ### Javascript
 - 
+### Python Validation
+#### Home
+<br>
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-home-admin.jpg">
+</details>
 
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-home-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-home-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-home-views.jpg">
+</details>
+<br>
+
+#### Shop
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-shop-admin.jpg">
+</details>
+
+<details>
+<summary>Forms</summary>
+<img src="media/README/validation/python-validation-shop-forms.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-shop-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-shop-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-shop-views.jpg">
+</details>
+<br>
+
+#### Portfolio
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-portfolio-admin.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-portfolio-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-portfolio-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-portfolio-views.jpg">
+</details>
+<br>
+
+#### Bag
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-bag-admin.jpg">
+</details>
+
+<details>
+<summary>Contexts</summary>
+<img src="media/README/validation/python-validation-bag-context.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-bag-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-bag-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-home-views.jpg">
+</details>
+<br>
+
+#### About
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-about-admin.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-about-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-about-ulrs.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-about-views.jpg">
+</details>
+<br>
+
+#### Products
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-products-admin.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-products-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-products-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-products-views.jpg">
+</details>
+<br>
+
+#### Profiles
+
+<details>
+<summary>Admin</summary>
+<img src="media/README/validation/python-validation-profiles-admin.jpg">
+</details>
+
+<details>
+<summary>Forms</summary>
+<img src="media/README/validation/python-validation-profiles-forms.jpg">
+</details>
+
+<details>
+<summary>Models</summary>
+<img src="media/README/validation/python-validation-profiles-models.jpg">
+</details>
+
+<details>
+<summary>Urls</summary>
+<img src="media/README/validation/python-validation-profiles-urls.jpg">
+</details>
+
+<details>
+<summary>Views</summary>
+<img src="media/README/validation/python-validation-profiles-views.jpg">
+</details>
 <br>
 
 ### Lighthouse
@@ -362,7 +588,6 @@ Live website: https://graphic-me.herokuapp.com/
 | Footer Navigation | The navigation redirects the user to the correct page | The home, portfolio and order urls don't direct the user to the page | Create {% url '' %} path for each  |
 | Depolyed Website | The website is fully functional, live and accessable to all on the internt | When the url is searched a Error 500 is returned  | Change psygopg2 to version 2.8.6 | 
 <br>
-
 
 ## Deployment
 <hr>
