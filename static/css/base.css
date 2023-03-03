@@ -18,7 +18,7 @@ header {
     justify-content: center;
 }
 
-.test-link {
+.nav-link {
     text-decoration: none !important;
     color: white !important;
 }
@@ -130,6 +130,9 @@ footer {
     background-color: #1185C0;
 }
 
+.scoial {
+    color: #FFFFFF;
+}
 
 /* Message Container */
 .message-container {
