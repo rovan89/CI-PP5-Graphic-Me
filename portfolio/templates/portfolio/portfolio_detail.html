@@ -37,7 +37,7 @@
                         {% if portfolio_item.category %}
                         <p class="small mt-1 mb-0">
                             <a class="text-muted" href="{% url 'portfolio' %}?category={{ portfolio_item.category.name }}">
-                                <i class="fas fa-tag mr-1"></i></i>{{ portfolio_item.category.friendly_name }}
+                                <i class="fas fa-tag mr-1"></i>{{ portfolio_item.category.friendly_name }}
                             </a>
                         </p>
                         {% endif %}
