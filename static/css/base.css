@@ -2,6 +2,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: red;
 }
 
 .main-content-container {
@@ -11,11 +12,17 @@ body {
 /* Navigation */
 
 header {
-    background-color: #212426;
+    /* background-color: #212426; */
+    height: 1000px;
 }
 
 #navbarNav {
     justify-content: center;
+}
+
+.test-link {
+    text-decoration: none !important;
+    color: white !important;
 }
 
 #search_input_field {
