@@ -1,8 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-
 from .models import UserProfile
-
 
 
 class UserProfileForm(ModelForm):
@@ -17,6 +15,3 @@ class UserProfileForm(ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        placeholders = {
-            
-        }
