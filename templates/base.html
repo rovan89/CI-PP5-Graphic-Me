@@ -68,7 +68,7 @@
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
-                                    <i class="far fa-user"></i>
+                                    <i class="far fa-user text-white"></i>
                                     <p>Account</p>
                                 </div>
                             </a>
@@ -88,7 +88,7 @@
                             <a class="text-black nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <i class="fas fa-shopping-basket text-white"></i>
-                                    <p class="my-0">
+                                    <p class="my-0 text-white">
                                         {% if grand_total %}
                                             ${{ grand_total|floatformat:2 }}
                                         {% else %}
