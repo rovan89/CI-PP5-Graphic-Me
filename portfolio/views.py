@@ -5,8 +5,10 @@ from products.models import Product, Category
 
 # Create your views here.
 
+
 def full_portfolio(request):
-    """ This view returns the portfolio page, including sorting and search queries"""
+    """ This view returns the portfolio page,
+    including sorting and search queries"""
 
     portfolio_items = Product.objects.all()
     query = None
@@ -15,7 +17,8 @@ def full_portfolio(request):
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            portfolio_items = portfolio_items.filter(category__name__in=categories)
+            portfolio_items = portfolio_items.filter(
+                category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
@@ -24,7 +27,8 @@ def full_portfolio(request):
                 messages.error(request, "You didn't enter a vald search input")
                 return redirect(reverse('portfolio_items'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             portfolio_items = portfolio_items.filter(queries)
 
     context = {
