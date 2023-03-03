@@ -21,7 +21,7 @@
                     <div class="protfolio_detail_img_container text-center">
                         {% if portfolio_item.image %}
                             <a href="{{ portfolio_item.image.url }}" target="_blank">
-                                <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.name }}">
+                                <img src="{{ MEDIA_URL }}portfolio-images/{{ portfolio_item.image }}" alt="{{ portfolio_item.name }}">
                             </a>
                         {% else %}
                             <a href="">
