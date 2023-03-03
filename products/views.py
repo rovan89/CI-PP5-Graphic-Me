@@ -5,8 +5,10 @@ from .models import Product, Category
 
 # Create your views here.
 
+
 def all_products(request):
-    """ This view returns the portfolio page, including sorting and search queries"""
+    """ This view returns the portfolio page,
+        including sorting and search queries"""
 
     products = Product.objects.all()
     query = None
@@ -24,7 +26,8 @@ def all_products(request):
                 messages.error(request, "You didn't enter a vald search input")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     context = {
