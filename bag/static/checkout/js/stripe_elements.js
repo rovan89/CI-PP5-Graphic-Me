@@ -2,7 +2,6 @@ var stripePublicKey = $('#id_stripe_public_key').text().slice(1,-1);
 var client_secret = $('#id_client_secret').text().slice(1,-1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
-var testVar = []
 
 var style = {
     base: {
@@ -24,8 +23,6 @@ var card = elements.create('card', {style: style});
 // Handle form submit
 
 var form = document.getElementById('payment-form');
-
-
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
@@ -54,7 +51,6 @@ form.addEventListener('submit', function(ev) {
     });
 });
 
-
 card.mount('#card-element');
 
 // Handel realtime validation errors on the card element
@@ -66,10 +62,9 @@ card.addEventListener('change', function (event) {
                 <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
-        `
+        `;
         $(errorDiv).html(html);
     } else {
         errorDiv.textContent = '';
     }
 });
-
