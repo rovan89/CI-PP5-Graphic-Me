@@ -3,11 +3,8 @@
 
 Graphic Me is a graphic design service. This website is allows user to search previous work done by the graphic design company, create a user profile account and order custom graphic for their needs. 
 
-
 Live website: https://graphic-me.herokuapp.com/
-
-![Image of responsive design](assets/images/readme-images/responsive.PNG)
-
+<br>
 
 ## Table of Content
 <hr>
@@ -35,12 +32,13 @@ Live website: https://graphic-me.herokuapp.com/
     1. [HTML Validation](#HTML-validation)
     2. [CSS Validation](#CSS-validation)
     3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
+    4. [Python Validation](#Python-Validation)
+    5. [Performance](#performance)
 8. [Bugs](#Bugs)
 9. [Deployment](#deployment)
 10. [Credits](#credits)
     1. [site Images](#site-images)
-11. [Acknowledgements](#acknowledgements)
+
 
 
 ## Business Model
@@ -204,11 +202,6 @@ Keyword research was done by using Google tools. These were tested using long an
 ### User Profile
 - This section allows the user to see their profile
 
-### User Testimonials 
-- This section allows users to leave a testimonial and it to be displayed on the home page of the site
-
-![Image of user testimonials]()
-
 ### User Searching
 - This section allows users to search key words from the seachbar in the navigation menu
 
@@ -226,6 +219,13 @@ Keyword research was done by using Google tools. These were tested using long an
 <img src="media/README/user-order-form.PNG">
 </details>
 <br>
+
+## Database Models
+<hr>
+
+![Image of website keywords](media/model-diagrams-pp5.jpg)
+<br>
+
 
 ## Technologies Used
 <hr>
@@ -291,54 +291,6 @@ Keyword research was done by using Google tools. These were tested using long an
 <br>
 
 ### Performance
-### HTML
-
-
-<details>
-<summary>Home</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Portfolio</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Portfolio Detail</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Contact</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>About</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Bag</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Edit Item</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Checkout Success</summary>
-<img src="#">
-</details>
-
-<details>
-<summary>Order</summary>
-<img src="#">
-</details>
-<br>
 
 ### CSS Validation
 
@@ -569,12 +521,6 @@ Keyword research was done by using Google tools. These were tested using long an
 </details>
 <br>
 
-### Lighthouse
-
-- 
-
-<br>
-
 
 ## Bugs
 <hr>
@@ -624,11 +570,8 @@ Heroku and AWS was used for the deployment of this program.
 12. Add the Keys to the project and Heroku config vars
 <br>
 
-
 ## Credits
 <hr>
-
-
 
 ### Site Images
 - Fish&Co. - Image by pexels.com
